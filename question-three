@@ -1,0 +1,56 @@
+public class ArrayStatistics {
+public static void main(String[] args) {
+int[] data = {2, 5, 5, 9, 4, 7, 0, 9, 6, 11, 12};
+ 
+// Calculate mean
+double mean = calculateMean(data);
+System.out.println("Mean: " + mean);
+ 
+// Calculate median
+double median = calculateMedian(data);
+System.out.println("Median: " + median);
+ 
+// Calculate standard deviation
+double standardDeviation =
+calculateStandardDeviation(data, mean);
+System.out.println("Standard Deviation: " +
+standardDeviation);
+}
+ 
+// Calculates the mean of the given array
+public static double calculateMean(int[] data) {
+int sum = 0;
+for (int value : data) {
+sum += value;
+}
+return (double) sum / data.length;
+}
+// Calculates the median of the given array
+public static double calculateMedian(int[] data) {
+int[] sortedData = Arrays.copyOf(data, data.length);
+Arrays.sort(sortedData);
+ 
+int middle = sortedData.length / 2;
+if (sortedData.length % 2 == 0) {
+// Even number of elements
+return (sortedData[middle - 1] + sortedData[middle])
+/2.0;
+ 
+} else {
+// Odd number of elements
+return sortedData[middle];
+}
+}
+// Calculates the standard deviation of the given array
+public static double calculateStandardDeviation(int[] data,
+  double mean) {
+double sumOfSquares = 0;
+for (int value : data) {
+double diff = value - mean;
+sumOfSquares += diff * diff;
+}
+return Math.sqrt(sumOfSquares / data.length);
+ 
+}
+}    
+ 
