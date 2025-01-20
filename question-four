@@ -1,0 +1,23 @@
+  import java.util.Scanner;
+public class ArrayInputAndOutput {
+public static void main(String[] args) {
+// Declare an array of length 10
+int[] array = new int[10];
+ 
+// a. Assign elements to the array by accepting input
+//from the user
+Scanner scanner = new Scanner(System.in);
+for (int i = 0; i < array.length; i++) {
+System.out.print("Enter value for index " + i + ": ");
+array[i] = scanner.nextInt();  
+}
+ 
+// b. Print out the input entered by the user using a for-
+//each loop
+System.out.println("\nValues entered by the user:");
+for (int value : array) {
+System.out.print(value + " ");
+}
+}
+ 
+}
