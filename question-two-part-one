@@ -1,0 +1,21 @@
+public class NigeriaFlag {
+         public static void main(String[] args) { 
+// Dimensions of the flag
+int height = 10;
+int width = 30;  
+ 
+char green = '*';
+char white = '-';
+ 
+// Single Loop Approach
+System.out.println("Nigeria Flag (Single Loop)"); for (int i = 0; i < height; i++) {
+for (int j = 0; j < width; j++) {
+   if (j < width / 3) {  
+System.out.print(green);
+} else if (j < 2 * width / 3) {
+System.out.print(white);
+} else {
+System.out.print(green);
+}
+}
+System.out.println(); 
